@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <form action="/countries/{{country.id}}" method="POST">
+        <div class="country-name">
+            <label for="country_name">Country:</label>
+            <input type="text" id="country_name" name="country_name" value="{{country.country_name}}" required
+                autofocus>
+        </div>
+        <div class="update_btn_position">
+            <button class="update-btn" type="submit">Update Country</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

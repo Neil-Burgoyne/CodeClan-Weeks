@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2 class="no-margin">Book List</h2>
+    <section>
+        {% for book in book_list %}
+        <section>
+            <h3>{{book.title}}</h3>
+            <h3>{{book.author}}</h3>
+            <h4>{{book.genre}}</h4>
+            <form action="/book/{{ loop.index0 }}/delete" method="POST">
+                <input class="delete-button" type="submit" value="Delete">
+            </form>
+        </section>
+        {% endfor %}
+    </section>
+</section>
+<hr class="no-margin" />
+<form action="/book" method="POST">
+    <h2 class="no-margin">Add Book to Digital Library</h2>
+    <div>
+        <p>
+            <label for="title">Title:</label>
+            <input id="title" name="title" type="text">
+            <label for="author">Author:</label>
+            <input id="author" name="author" type="text">
+            <label for="genre">Genre:</label>
+            <input id="genre" name="genre" type="text">
+        </p>
+    </div>
+    <input class="button" type="submit">
+</form>
+{% endblock %}

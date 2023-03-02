@@ -1,0 +1,51 @@
+#grid-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+#grid-wrapper>footer {
+    display: flex;
+    justify-content: center;
+}
+
+#grid-wrapper>main {
+    margin: 2rem auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.padding2 {
+    padding: 2rem;
+}
+
+.blue-background {
+    background: dodgerblue;
+    color: white;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+hr {
+    border-top: 1px solid dodgerblue;
+}
+
+.button {
+    padding: 0.6rem;
+    background: transparent;
+    border: 1px solid dodgerblue;
+    border-radius: 8px;
+    color: dodgerblue;
+}
+
+.delete-button {
+    padding: 0.6rem;
+    background: transparent;
+    border: 1px solid red;
+    border-radius: 8px;
+    color: red;
+}

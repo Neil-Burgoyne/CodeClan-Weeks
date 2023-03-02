@@ -1,0 +1,158 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    background-image: url("./images/wallpaper.jpg");
+}
+
+.link-style {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    color: white;
+
+}
+
+.content>li>a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+.content>li {
+    padding: .5rem;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    color: white;
+
+}
+
+.header-name {
+    text-align: center;
+    margin: 0;
+    font-size: 6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: white;
+    padding-top: 30px;
+}
+
+.main-nav {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: normal;
+   
+}
+
+a:link {
+    text-decoration: none; 
+}
+
+a:visited {
+    color: white;
+}
+
+
+.nav a:hover {
+    background-color: green;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav li {
+    display: inline;
+}
+
+.welcome-header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.countries {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    color: white;
+}
+
+.add-new-country {
+    font-size: 3rem;
+    color: white;
+    font-weight: normal;
+    gap: 2rem;
+}
+
+.add-country-btn {
+    /* padding-left: 50px; */
+    padding: 140px 400px;
+}
+
+.country-name {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.single_country {
+    font-size: 4rem;
+    font-weight: normal;
+    color: white;
+}
+
+.visited-page {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 2rem;
+}
+
+.add-city-btn {
+    /* padding-left: 10px; */
+    font-size: 10rem;
+    line-height: 40px;
+    color: white;
+    padding: 14px 40px;
+}
+
+.city-name {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.new-city {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.delete-btn {
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    font-size: 10rem;
+    line-height: 40px;
+    color: white;
+    padding: 14px 40px;
+}
+
+.update-btn-position {
+    padding-left: 50px;
+}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <div>
+        <p><a class="link-style" href="/countries/{{country.id}}//edit"> Edit Country</a></p>
+        <aside class="single-country">
+            <h1>Country: {{ country.country_name }}</h1>
+            <h1>- Cities -</h1>
+        </aside>
+    </div>
+    <div>
+        {% for city in country_cities %}
+        <p class="city-name">{{ city.city_name }}</p>
+        {% if city.visited == True %}
+        {% endif %}
+        <div>
+            <div>
+                <div>
+                    <form class="visited-page" action="/cities/{{city.id}}" method="POST">
+                        <label for="visited">Have you visited this city?:</label>
+                        <select name="visited" id="visited">
+                            <option value="true" {% if city.visited==True %} selected="selected" {% endif %}>
+                                Yes
+                            </option>
+                            <option value="false" {% if city.visited==False %} selected="selected" {% endif %}>
+                                No
+                            </option>
+                        </select>
+                        <button type="submit">Enter</button>
+                    </form>
+                </div>
+            </div>
+            <div class="delete_btn">
+                <form action="/cities/{{city.id}}/delete" method="POST">
+                    <button type="submit">Delete this City?</button>
+                </form>
+            </div>
+            {% endfor %}
+            <p><a class="link-style" href="/countries/{{country.id}}/new_city">Add City</a></p>
+        </div>
+        {% endblock %}

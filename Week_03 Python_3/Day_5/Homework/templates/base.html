@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Book List</title>
+</head>
+<body>
+    <div id="grid-wrapper">
+        <header class="blue-background padding2">
+            <h1 class="no-margin">Digital Library</h1>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="blue-background padding2">
+            <p class="no-margin">Book List &copy; 2023</p>
+        </footer>
+    </div>
+</body>
+</html>

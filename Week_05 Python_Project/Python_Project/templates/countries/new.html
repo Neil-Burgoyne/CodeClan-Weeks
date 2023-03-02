@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/countries" method="POST">
+    <div class="country-name">
+        <label for="country_name">Country:</label>
+        <input type="text" id="country_name" name="country_name" placeholder="Track Countries Visited" required
+            autofocus>
+    </div>
+    <div class="add_country_btn">
+        <button type="submit">Add</button>
+    </div>
+</form>
+{% endblock %}

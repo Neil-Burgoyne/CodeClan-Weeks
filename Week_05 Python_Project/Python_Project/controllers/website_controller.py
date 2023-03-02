@@ -1,0 +1,87 @@
+from flask import Flask, render_template, request, redirect
+from flask import Blueprint
+from models.country import Country
+from models.city import City
+import repositories.country_repository as country_repository
+import repositories.city_repository as city_repository
+
+countries_blueprint = Blueprint("countries", __name__)
+
+
+@countries_blueprint.route("/countries")
+def countries():
+    countries = country_repository.select_all()
+    return render_template("countries/index.html", all_countries=countries)
+
+
+@countries_blueprint.route("/countries/new")
+def new_country():
+    return render_template("/countries/new.html")
+
+
+@countries_blueprint.route("/countries/<id>/new_city")
+def new_city(id):
+    country = country_repository.select(id)
+    return render_template("/countries/new_city.html", country=country)
+
+
+@countries_blueprint.route("/countries/<id>/create_city", methods=["POST"])
+def create_city(id):
+    city_name = request.form["city_name"]
+    country = country_repository.select(id)
+    city = City(city_name, country)
+    city_repository.save(city)
+    return redirect(f"/countries/{id}")
+
+
+@countries_blueprint.route("/countries", methods=["POST"])
+def create_country():
+    country_name = request.form["country_name"]
+    country = Country(country_name)
+    country_repository.save(country)
+    return redirect("/countries")
+
+
+@countries_blueprint.route("/countries/<id>")
+def show_country(id):
+    country = country_repository.select(id)
+    country_cities = country_repository.cities(country)
+    return render_template(
+        "/countries/show.html", country=country, country_cities=country_cities
+    )
+
+
+@countries_blueprint.route("/countries/<id>/edit")
+def edit_country(id):
+    country = country_repository.select(id)
+    return render_template("/countries/edit.html", country=country)
+
+
+@countries_blueprint.route("/countries/<id>", methods=["POST"])
+def update_country(id):
+    country_name = request.form["country_name"]
+    country = Country(country_name, id)
+    country_repository.update(country)
+    return redirect("/countries")
+
+
+@countries_blueprint.route("/cities/<id>", methods=["POST"])
+def update_city(id):
+    city = city_repository.select(id)
+    visited = request.form["visited"]
+    city.visited = visited
+    city_repository.update(city)
+    return redirect(f"/countries/{city.country.id}")
+
+
+@countries_blueprint.route("/countries/<id>/delete", methods=["POST"])
+def delete_country(id):
+    country_repository.delete(id)
+    return redirect("/countries")
+
+
+@countries_blueprint.route("/cities/<id>/delete", methods=["POST"])
+def delete_city(id):
+    removed_city = city_repository.select(id)
+    city_repository.delete(id)
+    return redirect(f"/countries/{removed_city.country.id}")

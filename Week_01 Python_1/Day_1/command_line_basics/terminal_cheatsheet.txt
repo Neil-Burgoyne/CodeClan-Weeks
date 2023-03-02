@@ -1,0 +1,23 @@
+pwd - Shows full pathname of directory
+
+ls - Lists directories and files
+
+mkdir - Creates directory
+
+cd - Changes postion of directory
+
+touch - Creates file
+
+cd .. - Move up directory
+
+../.. - Move to root
+
+. - Same path
+
+mv - Move & rename
+
+rm - delete
+
+clear - Clears screen
+
+git init 

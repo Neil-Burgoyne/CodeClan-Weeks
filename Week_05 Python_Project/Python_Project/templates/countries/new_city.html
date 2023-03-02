@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/countries/{{country.id}}/create_city" method="POST">
+    <div class="new_city">
+        <label for="city_name">City:</label>
+        <input type="text" id="city_name" name="city_name" autofocus>
+    </div>
+    <div class="add_city_btn">
+        <button type="submit">Add City To {{country.country_name}}</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="add-new-country">
+    <p><a href="/countries/new">Track Countries Visited</a></p>
+</div>
+<div class="countries">
+    {% for country in all_countries %}
+    <div class="content">
+        <li><a href="/countries/{{country.id}}">{{ country.country_name }}</a></li>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
