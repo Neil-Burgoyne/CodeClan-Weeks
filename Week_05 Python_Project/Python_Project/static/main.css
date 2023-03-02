@@ -5,6 +5,11 @@ body {
     background-image: url("./images/wallpaper.jpg");
 }
 
+.button {
+    position: absolute;
+    top:50%
+}
+
 .link-style {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
@@ -45,11 +50,11 @@ body {
     text-align: left;
     font-size: 1rem;
     font-weight: normal;
-   
+
 }
 
 a:link {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 a:visited {
@@ -82,7 +87,7 @@ a:visited {
     font-weight: normal;
     text-align: center;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .countries {
@@ -126,11 +131,11 @@ a:visited {
 }
 
 .add-city-btn {
-    /* padding-left: 10px; */
+    /* padding-left: 10px;
     font-size: 10rem;
     line-height: 40px;
-    color: white;
-    padding: 14px 40px;
+    color: white; */
+    padding: 140px 400px;
 }
 
 .city-name {

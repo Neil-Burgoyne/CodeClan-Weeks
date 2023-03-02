@@ -2,11 +2,25 @@
 {% block content %}
 <form action="/countries/{{country.id}}/create_city" method="POST">
     <div class="new_city">
-        <label for="city_name">City:</label>
-        <input type="text" id="city_name" name="city_name" autofocus>
+        <label for="city_name">
+            <h1>Enter City:</h1>
+        </label>
+        <input type="text" id="city_name" name="city_name" size="30">
     </div>
     <div class="add_city_btn">
-        <button type="submit">Add City To {{country.country_name}}</button>
+        <style>
+            button {
+                display: center;
+                background-color: purple;
+                padding: 10px;
+                width: 150px;
+                color: white;
+                text-align: center;
+            }
+        </style>
+        <button type="submit">
+            <h3>Add City To {{country.country_name}}</h3>
+        </button>
     </div>
 </form>
 {% endblock %}
