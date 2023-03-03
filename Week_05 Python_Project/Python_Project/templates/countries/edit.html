@@ -3,12 +3,24 @@
 <div>
     <form action="/countries/{{country.id}}" method="POST">
         <div class="country-name">
-            <label for="country_name">Country:</label>
-            <input type="text" id="country_name" name="country_name" value="{{country.country_name}}" required
-                autofocus>
+            <label for="country_name">
+                <h1>Country:</h1></label>
+            <input type="text" id="country_name" name="country_name" value="{{country.country_name}}" size="30">
         </div>
         <div class="update_btn_position">
-            <button class="update-btn" type="submit">Update Country</button>
+            <style>
+                button {
+                    display: center;
+                    background-color: purple;
+                    padding: 10px;
+                    width: 150px;
+                    color: white;
+                    text-align: center;
+                }
+            </style>
+            <button class="update-btn" type="submit">
+                <h3>Update Country</h3>
+            </button>
         </div>
     </form>
 </div>
