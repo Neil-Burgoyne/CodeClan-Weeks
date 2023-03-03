@@ -31,6 +31,16 @@
                 </div>
             </div>
             <div class="delete_btn">
+                <style>
+                    button {
+                        display: center;
+                        background-color: purple;
+                        padding: 10px;
+                        width: 150px;
+                        color: white;
+                        text-align: center;
+                    }
+                </style>
                 <form action="/cities/{{city.id}}/delete" method="POST">
                     <button type="submit">Delete this City?</button>
                 </form>
