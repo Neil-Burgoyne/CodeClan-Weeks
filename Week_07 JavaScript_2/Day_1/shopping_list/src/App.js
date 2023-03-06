@@ -9,10 +9,6 @@ function App() {
   ]);
   const [newItemName, setNewItemName] = useState('');
 
-  const itemNodes = items.map((item, index) => {
-    return <li key={index}>{item.name}</li>
-  });
-  
   function saveNewItem(event) {
     event.preventDefault();
     // get text from the input
@@ -31,6 +27,27 @@ function App() {
   function handleInputChange(event) {
     setNewItemName(event.target.value);
   }
+
+  function purchaseItem(index) {
+    // make a copy of the item that we're updating
+    const itemToUpdate = {...items[index]};
+    // modify the isPurchased property on the new copy
+    itemToUpdate.isPurchased = true;
+    // make a copy of the array of items
+    const newItems = [...items];
+    // replace the old version of the item with the updated one
+    newItems[index] = itemToUpdate;
+    // replace state with new state
+    setItems(newItems);
+  }
+
+  const itemNodes = items.map((item, index) => (
+    <li key={index}>
+      <span>{item.name}</span>
+      {/* {item.isPurchased && <span>Purchased</span>} */}
+      {item.isPurchased ? <span>Purchased</span> : <button onClick={() => {purchaseItem(index)}}>Purchase</button>}
+    </li>
+  ));
 
   return (
     <div className="App">
