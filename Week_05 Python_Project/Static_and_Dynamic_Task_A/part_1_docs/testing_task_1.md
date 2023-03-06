@@ -22,7 +22,9 @@ class CardGame:
       return True
     else
       return False
-   
+  
+# card.value needs "=="
+# else needs ":"
 
   dif highest_card(self, card1 card2):
   if card1.value > card2.value:
@@ -30,12 +32,19 @@ class CardGame:
   else:
     return card2
   
-
+# dif should be def
+# , between card1 card2
+# "return card" should be "return card1"
+# if statement needs indented
 
 def cards_total(self, cards):
   total
   for card in cards:
     total += card.value
     return "You have a total of" + total
-  
-```
+
+# def function needs indented
+# "total" should be "total = 0"
+# return statement should be futher indented in the function
+# "of" should have a space after it
+# # "total" is not a string
