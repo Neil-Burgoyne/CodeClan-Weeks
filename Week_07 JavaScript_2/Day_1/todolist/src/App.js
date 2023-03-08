@@ -3,31 +3,15 @@ import React, {useState} from "react"
 
 function App() {
   const [todoList, setTodoList] = useState ([
-    { name: "Buy shopping", priority: true },
-    { name: "Clean bathroom", priority: false},
-    { name: "Car's MOT", ppriority: true},
+    { name: "Buy shopping", priority: "high" },
+    { name: "Clean bathroom", priority: "low" },
+    { name: "Car's MOT", ppriority: "high" },
   ])
 
   const [name, setName] = useState("")
-  const [priority, setPriority] = useState(false)
+  const [priority, setPriority] = useState("")
 
-
-
-
-
-
-
-
-const listItems = todoList.map((item, index) => (
-<li key={index}>
-  <span>{listItems}</span>
-
-</li>)
-
-)
-
-
-
+const nodeList = todoList.map((task, index) => <li key={index} className={task.priority}> {task.name}</li>)
 
 
   return (
